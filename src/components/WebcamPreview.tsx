@@ -185,9 +185,6 @@ export default function WebcamPreview() {
             const isRingExtended = landmarks[16].y < landmarks[14].y;
             const isPinkyExtended = landmarks[20].y < landmarks[18].y;
 
-            // Thumb is extended if it's horizontally far from the hand index joint
-            const isThumbExtended = Math.abs(landmarks[4].x - landmarks[5].x) > 0.08 || landmarks[4].y < landmarks[3].y;
-
             let detectedGesture: GestureType = 'none';
 
             if (score >= sensitivity) {
@@ -197,8 +194,13 @@ export default function WebcamPreview() {
                 detectedGesture = 'move';
               } else if (!isIndexExtended && !isMiddleExtended && !isRingExtended && !isPinkyExtended) {
                 // If index, middle, ring, pinky are folded, check for Thumbs Up or Fist
-                // For Thumbs Up: Thumb tip is pointing up (Y is smaller than MCP), other fingers folded
-                const isThumbsUp = landmarks[4].y < landmarks[3].y && landmarks[4].y < landmarks[5].y && isThumbExtended;
+                // For Thumbs Up: Thumb tip must point up (lower Y) and be significantly higher than index MCP joint (5),
+                // with clear horizontal separation to ensure the thumb is not resting on the fist.
+                const isThumbsUp = 
+                  landmarks[4].y < landmarks[3].y && 
+                  landmarks[4].y < landmarks[5].y - 0.045 && 
+                  Math.abs(landmarks[4].x - landmarks[5].x) > 0.04;
+
                 detectedGesture = isThumbsUp ? 'save' : 'erase';
               } else if (isIndexExtended && isMiddleExtended && isRingExtended && isPinkyExtended) {
                 detectedGesture = 'clear';
