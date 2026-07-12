@@ -65,6 +65,7 @@ const DEFAULT_SETTINGS: AppSettings = {
   onboardingEnabled: true,
   brushColor: '#3B82F6',
   brushSize: 6,
+  cameraFitMode: 'cover',
 };
 
 const initialPage = (): Page => ({

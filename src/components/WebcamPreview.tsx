@@ -37,6 +37,7 @@ export default function WebcamPreview() {
   const cameraDeviceId = useBoardStore((state) => state.settings.cameraDeviceId);
   const clearCurrentPage = useBoardStore((state) => state.clearCurrentPage);
   const sensitivity = useBoardStore((state) => state.settings.gestureSensitivity);
+  const cameraFitMode = useBoardStore((state) => state.settings.cameraFitMode);
 
   // Component state
   const [streamActive, setStreamActive] = useState(false);
@@ -415,14 +416,14 @@ export default function WebcamPreview() {
         playsInline
         muted
         autoPlay
-        className="absolute inset-0 w-full h-full object-cover"
+        className={`absolute inset-0 w-full h-full ${cameraFitMode === 'contain' ? 'object-contain' : 'object-cover'}`}
         style={{ transform: 'scaleX(-1)' }} // Mirror view
       />
 
       {/* skeleton landmarks drawer overlay */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none"
+        className={`absolute inset-0 w-full h-full ${cameraFitMode === 'contain' ? 'object-contain' : 'object-cover'} z-0 pointer-events-none`}
         style={{ transform: 'scaleX(-1)' }} // Match video mirror
       />
 

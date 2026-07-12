@@ -167,6 +167,41 @@ export default function SettingsModal({ isOpen, onClose }: SettingsModalProps) {
                 )}
               </button>
             </div>
+
+            {/* Camera Feed Fit Segment Select */}
+            <div className="space-y-2 border-t border-white/5 pt-3">
+              <label className="text-xs font-semibold text-slate-400 uppercase tracking-wider font-mono flex items-center gap-2">
+                <Camera className="w-4 h-4 text-slate-500" />
+                Camera Display Mode
+              </label>
+              <div className="grid grid-cols-2 gap-1.5 bg-slate-900/60 p-1 rounded-xl border border-white/10">
+                <button
+                  type="button"
+                  onClick={() => updateSettings({ cameraFitMode: 'contain' })}
+                  className={`py-2 px-3 rounded-lg text-xs font-medium font-sans transition-all ${
+                    settings.cameraFitMode === 'contain'
+                      ? 'bg-blue-600 text-white shadow-md font-semibold'
+                      : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  Fit Feed (Show All)
+                </button>
+                <button
+                  type="button"
+                  onClick={() => updateSettings({ cameraFitMode: 'cover' })}
+                  className={`py-2 px-3 rounded-lg text-xs font-medium font-sans transition-all ${
+                    settings.cameraFitMode === 'cover'
+                      ? 'bg-blue-600 text-white shadow-md font-semibold'
+                      : 'text-slate-400 hover:text-slate-200'
+                  }`}
+                >
+                  Fill Screen (Cropped)
+                </button>
+              </div>
+              <p className="text-[10px] text-slate-400 leading-normal">
+                Select <b>Fit Feed</b> on mobile devices and vertical screens to prevent your face and hand landmarks from getting cropped.
+              </p>
+            </div>
           </div>
 
           {/* Action Footer */}

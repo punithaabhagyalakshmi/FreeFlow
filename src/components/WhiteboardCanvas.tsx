@@ -20,6 +20,7 @@ export default function WhiteboardCanvas() {
   const undo = useBoardStore((state) => state.undo);
   const redo = useBoardStore((state) => state.redo);
   const showToast = useBoardStore((state) => state.showToast);
+  const cameraFitMode = useBoardStore((state) => state.settings.cameraFitMode);
 
   // Local state for direct mouse/finger drawing on screen
   const isMouseDrawingRef = useRef(false);
@@ -477,7 +478,9 @@ export default function WhiteboardCanvas() {
           const cw = dimensions.width;
           const ch = dimensions.height;
 
-          const scale = Math.max(cw / vw, ch / vh);
+          const scale = cameraFitMode === 'contain'
+            ? Math.min(cw / vw, ch / vh)
+            : Math.max(cw / vw, ch / vh);
           const ox = (vw * scale - cw) / 2;
           const oy = (vh * scale - ch) / 2;
 
@@ -613,7 +616,7 @@ export default function WhiteboardCanvas() {
     return () => {
       active = false;
     };
-  }, [strokes, currentGesture, currentColor, brushSize, isEraser, dimensions, currentPageIndex, addStroke, updateLastStroke, finalizeLastStroke, showToast]);
+  }, [strokes, currentGesture, currentColor, brushSize, isEraser, dimensions, currentPageIndex, addStroke, updateLastStroke, finalizeLastStroke, showToast, cameraFitMode]);
 
   return (
     <div

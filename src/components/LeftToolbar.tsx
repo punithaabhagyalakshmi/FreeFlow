@@ -1,3 +1,4 @@
+import { motion } from 'motion/react';
 import {
   Undo2,
   Redo2,
@@ -14,6 +15,7 @@ import { useBoardStore } from '../state/store';
 
 interface LeftToolbarProps {
   onSaveImage: () => void;
+  isOpen: boolean;
 }
 
 const PALETTE = [
@@ -25,7 +27,7 @@ const PALETTE = [
   { name: 'Vibrant Amber', value: '#F59E0B' },
 ];
 
-export default function LeftToolbar({ onSaveImage }: LeftToolbarProps) {
+export default function LeftToolbar({ onSaveImage, isOpen }: LeftToolbarProps) {
   const currentColor = useBoardStore((state) => state.currentColor);
   const brushSize = useBoardStore((state) => state.brushSize);
   const isEraser = useBoardStore((state) => state.isEraser);
@@ -49,7 +51,18 @@ export default function LeftToolbar({ onSaveImage }: LeftToolbarProps) {
   const canRedo = currentPage.redoStack.length > 0;
 
   return (
-    <aside className="w-64 border-r border-white/10 glass-panel p-4 flex flex-col gap-5 text-white overflow-y-auto h-full shrink-0">
+    <motion.aside
+      initial={{ width: 256, opacity: 1 }}
+      animate={{
+        width: isOpen ? 256 : 0,
+        opacity: isOpen ? 1 : 0,
+        paddingLeft: isOpen ? 16 : 0,
+        paddingRight: isOpen ? 16 : 0,
+        borderRightWidth: isOpen ? 1 : 0,
+      }}
+      transition={{ type: 'spring', stiffness: 260, damping: 28 }}
+      className="border-white/10 glass-panel flex flex-col gap-5 text-white overflow-y-auto h-full shrink-0 overflow-x-hidden"
+    >
       {/* 1. Paint Brush / Eraser Selection */}
       <div className="space-y-2">
         <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider font-mono">
@@ -224,6 +237,6 @@ export default function LeftToolbar({ onSaveImage }: LeftToolbarProps) {
           Export Drawing
         </button>
       </div>
-    </aside>
+    </motion.aside>
   );
 }

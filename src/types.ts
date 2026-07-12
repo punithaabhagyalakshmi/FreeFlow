@@ -34,4 +34,5 @@ export interface AppSettings {
   onboardingEnabled: boolean;
   brushColor: string;
   brushSize: number;
+  cameraFitMode: 'cover' | 'contain';
 }
