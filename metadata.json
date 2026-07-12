@@ -1,0 +1,6 @@
+{
+  "name": "FreeFlow",
+  "description": "An AI-powered gesture-controlled digital whiteboard that allows users to draw in the air using their hands through a webcam.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
