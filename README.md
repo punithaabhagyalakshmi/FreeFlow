@@ -6,6 +6,10 @@ FreeFlow is a modern AI-powered **air drawing application** that lets users crea
 
 Built with modern web technologies, FreeFlow runs entirely in the browser—no installations or additional software required.
 
+## 🌐 Live Demo
+
+🚀 **Live Website:** https://free-flow-nine.vercel.app
+
 ---
 
 ## ✨ Features
@@ -22,26 +26,26 @@ Built with modern web technologies, FreeFlow runs entirely in the browser—no i
 
 ### 🎨 Drawing Tools
 
-- Multiple Colors
-- Adjustable Brush Size
-- Eraser Tool
-- Smooth Stroke Rendering
-- Undo & Redo
-- Unlimited Drawing
+- 🎨 Multiple Colors
+- 🖌 Adjustable Brush Size
+- 🧽 Eraser Tool
+- ✨ Smooth Stroke Rendering
+- ↩ Undo & Redo
+- ♾ Unlimited Drawing
 
 ---
 
 ### 🤖 AI Shape Recognition
 
-Automatically detects and converts rough hand-drawn shapes into clean geometric shapes.
+Automatically detects and converts rough hand-drawn sketches into clean geometric shapes.
 
 Supported Shapes:
 
-- Circle
-- Square
-- Rectangle
-- Triangle
-- Straight Line
+- ⭕ Circle
+- ⬜ Square
+- ▭ Rectangle
+- 🔺 Triangle
+- 📏 Straight Line
 
 ---
 
@@ -56,13 +60,13 @@ Supported Shapes:
 
 ### 🎯 Premium User Experience
 
-- Modern Responsive Design
-- Dark + Light Mixed Theme
-- Glassmorphism UI
-- Smooth Animations
-- Beautiful Onboarding Screen
-- Live Gesture Indicator
-- Mobile & Desktop Friendly
+- 🌗 Mixed Dark + Light Theme
+- ✨ Glassmorphism UI
+- 📱 Fully Responsive
+- 🎬 Smooth Animations
+- 🎥 Live Webcam Preview
+- 👋 Real-Time Gesture Indicator
+- 🚀 Fast & Lightweight
 
 ---
 
@@ -115,11 +119,12 @@ freeflow/
 
 ## 🎮 How It Works
 
-1. Allow camera access.
-2. Position your hand in front of the webcam.
-3. Use gestures to interact with the application.
-4. Draw naturally in the air.
-5. Save your artwork instantly.
+1. Open FreeFlow.
+2. Allow camera access.
+3. Position your hand in front of the webcam.
+4. Use hand gestures to interact with the canvas.
+5. Draw naturally in the air.
+6. Save your artwork instantly.
 
 ---
 
@@ -166,7 +171,9 @@ npm run dev
 
 ## 🌐 Deployment
 
-FreeFlow is designed to be deployed seamlessly on **Vercel**.
+FreeFlow is deployed on **Vercel**.
+
+🔗 **Live Demo:** https://free-flow-nine.vercel.app
 
 ---
 
@@ -178,16 +185,21 @@ FreeFlow aims to redefine digital creativity by making drawing as natural as mov
 
 ## 🤝 Contributing
 
-Contributions, suggestions, and feature requests are welcome. Feel free to open an issue or submit a pull request.
+Contributions, feature requests, and suggestions are always welcome.
+
+Feel free to fork the project, open an issue, or submit a pull request.
 
 ---
 
 <div align="center">
 
-## FreeFlow
+# 🎨 FreeFlow
 
-### **Draw Beyond Touch.**
+### Draw Beyond Touch.
 
-Built with ❤️ using modern web technologies by Punithaa.
+🌐 Live Demo  
+https://free-flow-nine.vercel.app
+
+Built with ❤️ using modern web technologies by Punithaa
 
 </div>
