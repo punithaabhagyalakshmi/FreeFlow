@@ -1,97 +1,193 @@
-# FreeFlow 🌌
+# 🎨 FreeFlow
 
-An immersive, AI-powered, touchless gesture-controlled digital whiteboard that allows users to paint, draw, and interact in the air using their hands through a standard webcam. Powered by computer vision and a modern React client-side architecture.
+> **Draw Beyond Touch.**
+
+FreeFlow is a modern AI-powered **air drawing application** that lets users create digital artwork using natural hand gestures detected through their webcam. Instead of using a mouse or stylus, users can draw in the air with their fingers while FreeFlow translates those movements into smooth digital strokes in real time.
+
+Built with modern web technologies, FreeFlow runs entirely in the browser—no installations or additional software required.
 
 ---
 
 ## ✨ Features
 
-- **Spatial Air-Drawing Canvas**: Draw on a transparent whiteboard overlaid directly on top of your mirrored webcam feed for a highly immersive, futuristic feedback loop.
-- **Real-Time Hand Tracking**: Uses Google MediaPipe Hand Landmarker under the hood to perform low-latency hand tracking right inside your browser without any server-side processing overhead.
-- **Dynamic Hand Skeleton HUD**: Draws a real-time computer vision skeleton overlay that maps perfectly to your hand's joints (landmarks) and changes color depending on the active gesture.
-- **Intelligent Gesture Recognition**:
-  - **👆 Draw Mode**: Raise your index finger (1 finger) to draw precise, smooth vector strokes.
-  - **✌️ Hover/Move Mode**: Present your index and middle fingers (2 fingers) to move around without drawing.
-  - **🖐️ Erase/Clear**: Dedicated gestures to wipe the board clean or wipe specific elements.
-- **Fully Loaded UI Suite**:
-  - **Top Navigation**: Displays current tracking modes and rapid application control buttons.
-  - **Left Compact Toolbar**: Easy actions for manual drawing, clearing, and saving configurations.
-  - **Onboarding Guide**: Step-by-step interactive instructions showing how to present your hands and master gestures.
-  - **Settings Modal**: Customize brush sizes, stroke colors, tracking confidence levels, and more.
-  - **State Toasts**: Elegant non-blocking floating alerts for quick event confirmation.
+### 🖐 Gesture-Based Controls
+
+- ☝ One Finger → Draw
+- ✌ Two Fingers → Move Cursor
+- 👊 Fist → Eraser
+- 🖐 Open Palm → Clear Canvas
+- 👍 Thumbs Up → Save Drawing
 
 ---
 
-## 🎮 Hand Gesture Reference Guide
+### 🎨 Drawing Tools
 
-Stand about **2–4 feet back** from your camera, ensure your hands are well-lit, and try these gestures:
-
-| Gesture Mode | Finger Setup | Visual Skeleton Color | Action |
-| :--- | :--- | :--- | :--- |
-| **Draw** | Index finger upright (other fingers folded) | 🔵 Blue | Paints a stroke on the canvas |
-| **Hover / Move** | Index & Middle fingers upright | 🟣 Purple | Hover over menu items or navigate without drawing |
-| **Erase** | Open palm / Hand flat | 🔴 Rose Red | Erases drawn strokes near hand location |
-| **Clear** | Folded fist held steady | 🟡 Amber | Trigger countdown to wipe the entire canvas |
-| **Save Image** | Custom thumbs-up/ok signal | 🟢 Emerald Green | Captures and downloads the canvas as an image |
+- Multiple Colors
+- Adjustable Brush Size
+- Eraser Tool
+- Smooth Stroke Rendering
+- Undo & Redo
+- Unlimited Drawing
 
 ---
 
-## 🛠️ Tech Stack & Architecture
+### 🤖 AI Shape Recognition
 
-- **Frontend Framework**: [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
-- **Build Tool**: [Vite 6](https://vite.dev/)
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
-- **Animations**: [Motion](https://motion.dev/) (formerly Framer Motion)
-- **Computer Vision Engine**: [@mediapipe/tasks-vision](https://developers.google.com/mediapipe/solutions/vision/hand_landmarker)
-- **State Management**: [Zustand](https://github.com/pmndrs/zustand)
-- **Icons**: [Lucide React](https://lucide.dev/)
+Automatically detects and converts rough hand-drawn shapes into clean geometric shapes.
+
+Supported Shapes:
+
+- Circle
+- Square
+- Rectangle
+- Triangle
+- Straight Line
 
 ---
 
-## 🚀 Getting Started
+### 📄 Whiteboard Features
 
-### Prerequisites
+- Multiple Drawing Pages
+- Switch Between Pages
+- Independent Canvas History
+- Save Drawings as PNG
 
-Make sure you have [Node.js](https://nodejs.org/) installed on your machine (v18 or higher is recommended).
+---
 
-### Installation
+### 🎯 Premium User Experience
 
-1. Clone or download the repository files:
-   ```bash
-   git clone <your-repo-url>
-   cd freeflow
-   ```
+- Modern Responsive Design
+- Dark + Light Mixed Theme
+- Glassmorphism UI
+- Smooth Animations
+- Beautiful Onboarding Screen
+- Live Gesture Indicator
+- Mobile & Desktop Friendly
 
-2. Install the package dependencies:
-   ```bash
-   npm install
-   ```
+---
 
-### Development
+## 🛠 Tech Stack
 
-To start the development server with Hot Module Replacement and live reload:
+### Frontend
+
+- Next.js 15
+- React
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+
+### Computer Vision
+
+- MediaPipe Tasks Vision
+- HTML5 Canvas API
+
+### State Management
+
+- Zustand
+
+### Icons
+
+- Lucide React
+
+### Deployment
+
+- Vercel
+
+---
+
+## 🚀 Project Structure
+
+```text
+freeflow/
+│
+├── app/
+├── components/
+├── hooks/
+├── services/
+├── state/
+├── utils/
+├── types/
+├── public/
+└── styles/
+```
+
+---
+
+## 🎮 How It Works
+
+1. Allow camera access.
+2. Position your hand in front of the webcam.
+3. Use gestures to interact with the application.
+4. Draw naturally in the air.
+5. Save your artwork instantly.
+
+---
+
+## 🖼 Gesture Guide
+
+| Gesture | Action |
+|----------|--------|
+| ☝ One Finger | Draw |
+| ✌ Two Fingers | Move Cursor |
+| 👊 Fist | Eraser |
+| 🖐 Open Palm | Clear Canvas |
+| 👍 Thumbs Up | Save Drawing |
+
+---
+
+## 🌟 Future Roadmap
+
+- AI Handwriting Recognition
+- Mathematical Expression Solver
+- Voice Commands
+- Collaborative Drawing
+- Cloud Sync
+- User Accounts
+- PDF Export
+- Presentation Mode
+- AI Sketch Enhancement
+- Custom Gesture Creation
+
+---
+
+## 📦 Installation
+
 ```bash
+git clone https://github.com/YOUR_USERNAME/freeflow.git
+
+cd freeflow
+
+npm install
+
 npm run dev
 ```
-Open your browser and navigate to `http://localhost:3000` (or the port specified by the dev system) to access the canvas. Ensure you grant **Camera Access** permissions when prompted.
-
-### Production Build
-
-To build the optimized static asset bundle for production deployment:
-```bash
-npm run build
-```
-The output files will be generated inside the `dist/` folder, ready to be hosted on any static web provider or cloud engine.
 
 ---
 
-## 🎨 Design Philosophy
+## 🌐 Deployment
 
-FreeFlow was built with modern aesthetic guidelines in mind:
-- **Clean Slate**: Leverages dark mode (`slate-950`) as the foundation to make colors pop and keep eyes safe during long drawing sessions.
-- **Minimalist Margin Clutter**: Keeps helper text, indicators, and canvas gridlines clean, lightweight, and unintrusive so you can focus entirely on the hand-drawing experience.
-- **Responsive Sizing**: The canvas auto-scales gracefully using a robust resize loop, making it compatible with varying browser window proportions.
+FreeFlow is designed to be deployed seamlessly on **Vercel**.
 
 ---
 
-Let your hands be the brush! Happy drawing with **FreeFlow**! 🌌
+## 🎯 Vision
+
+FreeFlow aims to redefine digital creativity by making drawing as natural as moving your hands. By combining computer vision, gesture recognition, and an intuitive interface, it creates a touch-free creative experience directly in the browser.
+
+---
+
+## 🤝 Contributing
+
+Contributions, suggestions, and feature requests are welcome. Feel free to open an issue or submit a pull request.
+
+---
+
+<div align="center">
+
+## FreeFlow
+
+### **Draw Beyond Touch.**
+
+Built with ❤️ using modern web technologies by Punithaa.
+
+</div>
